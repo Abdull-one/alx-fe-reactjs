@@ -1,6 +1,6 @@
-import WelcomeMessage from './components/WelcomeMessage'
+import WelcomeMessage from './components/WelcomeMessage';
 import Header from './Header';
-import MainContent from './MainContents'
+import MainContent from './MainContent';  
 import Footer from './Footer';
 
 function App() {
@@ -8,12 +8,10 @@ function App() {
     <>
       <WelcomeMessage />
       <Header />
-     <MainContent />
+      <MainContent />
       <Footer />
     </>
   );
 }
 
 export default App;
-
-
