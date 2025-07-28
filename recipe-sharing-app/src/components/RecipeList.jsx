@@ -1,17 +1,21 @@
 import { useRecipeStore } from '../store/recipeStore';
 
 const RecipeList = () => {
-  const recipes = useRecipeStore(state => state.recipes);
+  const recipes = useRecipeStore((state) => state.recipes);
+
+  if (recipes.length === 0) {
+    return <p>No recipes yet.</p>;
+  }
 
   return (
-    <div>
+    <ul className="space-y-4">
       {recipes.map((recipe) => (
-        <div key={recipe.id} className="border p-2 mb-2">
-          <h3>{recipe.title}</h3>
+        <li key={recipe.id} className="border p-4 rounded shadow">
+          <h2 className="text-xl font-bold">{recipe.title}</h2>
           <p>{recipe.description}</p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
