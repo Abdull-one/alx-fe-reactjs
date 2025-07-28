@@ -1,21 +1,29 @@
-import { useRecipeStore } from '../store/recipeStore';
+import { useRecipeStore } from '../recipeStore';
 
 const RecipeList = () => {
-  const recipes = useRecipeStore((state) => state.filteredRecipes);
+  const { recipes, favorites, addFavorite, removeFavorite } = useRecipeStore();
 
-  if (recipes.length === 0) {
-    return <p>No recipes yet.</p>;
-  }
+  const toggleFavorite = (id) => {
+    if (favorites.includes(id)) {
+      removeFavorite(id);
+    } else {
+      addFavorite(id);
+    }
+  };
 
   return (
-    <ul className="space-y-4">
+    <div>
+      <h2>Recipes</h2>
       {recipes.map((recipe) => (
-        <li key={recipe.id} className="border p-4 rounded shadow">
-          <h2 className="text-xl font-bold">{recipe.title}</h2>
+        <div key={recipe.id} style={{ border: '1px solid gray', margin: '10px' }}>
+          <h3>{recipe.title}</h3>
           <p>{recipe.description}</p>
-        </li>
+          <button onClick={() => toggleFavorite(recipe.id)}>
+            {favorites.includes(recipe.id) ? '★ Remove Favorite' : '☆ Add to Favorites'}
+          </button>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 
