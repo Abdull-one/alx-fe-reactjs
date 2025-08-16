@@ -1,26 +1,75 @@
 [
   {
     "id": 1,
-    "title": "Spaghetti Carbonara",
-    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/300x200",
-    "ingredients": ["Spaghetti", "Eggs", "Pecorino Romano", "Guanciale", "Black Pepper"],
-    "instructions": "1. Boil pasta.\n2. Fry guanciale.\n3. Mix eggs and cheese.\n4. Combine pasta with sauce and guanciale.\n5. Serve with pepper."
+    "title": "Jollof Rice",
+    "summary": "A classic West African dish made with rice, tomatoes, and spices.",
+    "image": "https://images.unsplash.com/photo-1605475128013-8a2cbf84ca9f",
+    "ingredients": [
+      "2 cups rice",
+      "1 cup tomato sauce",
+      "1 onion",
+      "1 red bell pepper",
+      "2 tbsp oil",
+      "Spices"
+    ],
+    "instructions": "Heat oil, sauté onion and pepper. Add tomato sauce and spices. Stir in rice and cook until tender."
   },
   {
     "id": 2,
-    "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/300x200",
-    "ingredients": ["Chicken", "Yogurt", "Spices", "Tomato Sauce", "Cream"],
-    "instructions": "1. Marinate chicken.\n2. Grill chicken.\n3. Cook sauce with tomatoes and spices.\n4. Add cream.\n5. Combine with chicken."
+    "title": "Egusi Soup",
+    "summary": "A popular Nigerian soup made with ground melon seeds, vegetables, and meat.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Egusi_Soup_and_Pounded_Yam.jpg",
+    "ingredients": [
+      "2 cups ground egusi",
+      "Spinach or bitterleaf",
+      "Palm oil",
+      "Beef or goat meat",
+      "Stockfish",
+      "Spices"
+    ],
+    "instructions": "Cook meat and stockfish. Fry egusi in palm oil, add vegetables and meat. Simmer until done."
   },
   {
     "id": 3,
-    "title": "Jollof Rice",
-    "summary": "A beloved West African dish made with rice, tomatoes, and spices.",
-    "image": "https://via.placeholder.com/300x200",
-    "ingredients": ["Rice", "Tomatoes", "Onions", "Pepper", "Seasoning"],
-    "instructions": "1. Blend tomatoes, peppers, onions.\n2. Fry the sauce.\n3. Add rice and stock.\n4. Cook until rice is tender.\n5. Serve hot."
+    "title": "Suya",
+    "summary": "Nigerian grilled meat skewers coated with a spicy peanut mix.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Nigerian_Suya.jpg",
+    "ingredients": [
+      "500g beef",
+      "Suya spice mix (yaji)",
+      "Ground peanuts",
+      "Skewers",
+      "Onions & tomatoes (for garnish)"
+    ],
+    "instructions": "Season beef with yaji spice. Skewer and grill over open flame until cooked. Serve with onions and tomatoes."
+  },
+  {
+    "id": 4,
+    "title": "Akara",
+    "summary": "Crispy fried bean cakes made from blended black-eyed peas.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/Akara.jpg",
+    "ingredients": [
+      "2 cups black-eyed peas",
+      "1 onion",
+      "Chili pepper",
+      "Salt",
+      "Oil for frying"
+    ],
+    "instructions": "Blend beans, onion, and pepper. Whisk batter and fry spoonfuls in hot oil until golden."
+  },
+  {
+    "id": 5,
+    "title": "Pounded Yam & Efo Riro",
+    "summary": "Soft pounded yam served with rich spinach stew.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Pounded_Yam_with_Efo_Riro.jpg",
+    "ingredients": [
+      "Yam",
+      "Spinach",
+      "Palm oil",
+      "Tomatoes",
+      "Pepper",
+      "Beef"
+    ],
+    "instructions": "Boil yam and pound until smooth. Cook spinach stew with palm oil, tomatoes, and beef. Serve together."
   }
 ]
