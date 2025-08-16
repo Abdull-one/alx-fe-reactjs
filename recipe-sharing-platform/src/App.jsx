@@ -2,15 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import UserProfile from "./components/UserProfile";
-
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div><h1 className="text-4xl font-bold text-blue-600">Hello Tailwind!</h1>
+      <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -19,7 +17,6 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-       <UserProfile />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -27,10 +24,6 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-          <div className="text-blue-500 text-3xl font-bold p-6">
-      Recipe Sharing Platform
-    </div>
-    
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
