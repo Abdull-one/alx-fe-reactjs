@@ -1,23 +1,26 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Profile from "./components/Profile"; 
+import Profile from "./components/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <>
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/about">About</Link> |{" "}
-        <Link to="/profile/1">Profile</Link>
-      </nav>
-
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about/*" element={<About />} />
-        <Route path="/profile/:id" element={<Profile />} />
+        <Route
+          path="/profile/:id/*"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 
