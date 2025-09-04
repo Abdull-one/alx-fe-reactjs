@@ -1,7 +1,12 @@
 import { useParams } from "react-router-dom";
 
-function BlogPost() {
+export default function BlogPost() {
   const { id } = useParams();
-  return <h2>Showing Blog Post #{id}</h2>;
+
+  return (
+    <div style={{ padding: "1rem" }}>
+      <h2>BlogPost</h2>
+      <p>Now viewing blog post with ID: {id}</p>
+    </div>
+  );
 }
-export default BlogPost;

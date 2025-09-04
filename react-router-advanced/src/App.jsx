@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./components/Profile";
+import BlogPost from "./pages/BlogPost";  
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/blog/:id" element={<BlogPost />} /> {/* 👈 dynamic route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
