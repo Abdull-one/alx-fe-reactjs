@@ -1,6 +1,6 @@
 import { useState } from "react";
-import RegistrationForm from "./components/RegistrationForm.jsx";
-import FormikRegistrationForm from "./components/formikForm";
+import RegistrationForm from "./components/RegistrationForm.jsx"; // controlled form
+import FormikRegistrationForm from "./components/formikForm.jsx"; // formik form
 
 export default function App() {
   const [view, setView] = useState("controlled"); // 'controlled' | 'formik'
