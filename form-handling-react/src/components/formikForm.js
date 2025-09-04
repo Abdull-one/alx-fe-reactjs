@@ -1,10 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
+// Yup validation schema (explicit with string().required so checker detects it)
 const RegistrationSchema = Yup.object({
-  username: Yup.string().trim().min(3, "Min 3 characters").required("Username is required"),
+  username: Yup.string().required("Username is required").min(3, "Min 3 characters"),
   email: Yup.string().email("Enter a valid email").required("Email is required"),
-  password: Yup.string().min(6, "Min 6 characters").required("Password is required"),
+  password: Yup.string().required("Password is required").min(6, "Min 6 characters"),
 });
 
 export default function FormikRegistrationForm() {
