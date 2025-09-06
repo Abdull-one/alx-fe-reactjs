@@ -30,6 +30,9 @@ function App() {
               className="bg-white p-4 rounded-lg shadow-md border"
             >
               <h3 className="text-xl font-bold">{recipe.title}</h3>
+              <h1 className="text-3xl font-bold text-blue-500">
+      Hello Recipe Sharing Platform
+    </h1>
               <p className="text-sm text-gray-600">
                 Ingredients: {recipe.ingredients.join(", ")}
               </p>
