@@ -1,19 +1,34 @@
 import { useState } from "react";
-import { fetchAdvancedUsers } from "../services/githubService";
+import { fetchUserData, fetchAdvancedUsers } from "../services/githubService";
 
 function Search() {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
   const [minRepos, setMinRepos] = useState("");
   const [results, setResults] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
+    setError(null);
+    setLoading(true);
+
     try {
-      const data = await fetchAdvancedUsers(username, location, minRepos);
-      setResults(data.items || []);
-    } catch (error) {
-      console.error("Error fetching users:", error);
+      let data;
+      if (location || minRepos) {
+        // Advanced search
+        data = await fetchAdvancedUsers(username, location, minRepos);
+        setResults(data.items || []);
+      } else {
+        // Basic search using fetchUserData
+        const user = await fetchUserData(username);
+        setResults(user ? [user] : []);
+      }
+    } catch (err) {
+      setError("Looks like we cant find the user");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -51,6 +66,9 @@ function Search() {
 
       {/* Results */}
       <div className="mt-6 space-y-4">
+        {loading && <p className="text-blue-500 text-center">Loading...</p>}
+        {error && <p className="text-red-500 text-center">{error}</p>}
+
         {results && results.length > 0 && (
           results.map((user) => (
             <div
@@ -77,7 +95,7 @@ function Search() {
           ))
         )}
 
-        {results && results.length === 0 && (
+        {!loading && results && results.length === 0 && !error && (
           <p className="text-gray-600 text-center">No results found</p>
         )}
       </div>
