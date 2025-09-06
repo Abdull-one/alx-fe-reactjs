@@ -51,8 +51,8 @@ function Search() {
 
       {/* Results */}
       <div className="mt-6 space-y-4">
-        {results.length > 0 ? (
-          results.map((user) => (   // <-- checker looks for this .map()
+        {results && results.length > 0 && (
+          results.map((user) => (
             <div
               key={user.id}
               className="p-4 border rounded-xl shadow-sm bg-gray-50 flex items-center justify-between"
@@ -75,7 +75,9 @@ function Search() {
               />
             </div>
           ))
-        ) : (
+        )}
+
+        {results && results.length === 0 && (
           <p className="text-gray-600 text-center">No results found</p>
         )}
       </div>
