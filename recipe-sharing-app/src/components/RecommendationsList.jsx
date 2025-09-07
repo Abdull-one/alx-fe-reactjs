@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
-import { useRecipeStore } from '../recipeStore';
+import { useRecipeStore } from "./recipeStore";
+import { useEffect } from "react";
 
 const RecommendationsList = () => {
-  const { recommendations, generateRecommendations } = useRecipeStore();
+  const recommendations = useRecipeStore((state) => state.recommendations);
+  const generateRecommendations = useRecipeStore(
+    (state) => state.generateRecommendations
+  );
 
   useEffect(() => {
     generateRecommendations();
@@ -10,13 +13,13 @@ const RecommendationsList = () => {
 
   return (
     <div>
-      <h2>Recommended Recipes</h2>
+      <h2 className="text-xl font-bold mb-2">Recommended Recipes</h2>
       {recommendations.length === 0 ? (
         <p>No recommendations yet.</p>
       ) : (
         recommendations.map((recipe) => (
-          <div key={recipe.id}>
-            <h3>{recipe.title}</h3>
+          <div key={recipe.id} className="border p-2 mb-2 rounded">
+            <h3 className="font-semibold">{recipe.title}</h3>
             <p>{recipe.description}</p>
           </div>
         ))
